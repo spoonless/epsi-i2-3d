@@ -65,9 +65,10 @@
       function onMouseClick(event) {
         var position = new THREE.Vector2();
         // On conserve la position de la souris dans l'espace de coordonnées
-        // NDC (Normalized device coordinates). Les valeurs de x et y doivent
-        position.x = (event.clientX / window.innerWidth) * 2 - 1;
-        position.y = - (event.clientY / window.innerHeight) * 2 + 1;
+        // NDC (Normalized device coordinates).
+        var domRect = renderer.domElement.getBoundingClientRect();
+        position.x = (event.clientX / domRect.width) * 2 - 1 + domRect.left;
+        position.y = - (event.clientY / domRect.height) * 2 + 1 + domRect.top;
 
         var s = getSelectionneLePlusProche(position);
         if (s) {
