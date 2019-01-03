@@ -762,6 +762,19 @@ vont devoir être transférées dans la mémoire de la carte graphique. Si vos
 images n’ont pas la bonne dimension, <a class="reference external" href="https://threejs.org/">three.js</a> les ajustent automatiquement
 au prix d’un traitement supplémentaire.</p>
 </div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>L’utilisation de texture suppose la génération d’un <em>shader</em> particulier par
+<a class="reference external" href="https://threejs.org/">three.js</a>. Un <em>shader</em> est un programme qui est compilé et exécuté par la
+carte graphique. Si vous voulez modifier un matériau (par exemple ajouter
+ou supprimer une texture) alors que la scène a déjà été rendue une fois,
+vous <strong>devez</strong> indiquer à <a class="reference external" href="https://threejs.org/">three.js</a> qu’il doit créer un nouveau <em>shader</em>
+que la carte graphique doit recompiler. Pour cela, on passe la propriété
+<a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/Material.needsUpdate">needsUpdate</a> du matériau à <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<div class="last highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mesh</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">needsUpdate</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="un-texture-comme-color-map">
 <h3>Un texture comme <em>color map</em><a class="headerlink" href="#un-texture-comme-color-map" title="Lien permanent vers ce titre">¶</a></h3>
@@ -913,7 +926,7 @@ sur Internet ou utiliser les suivantes :</p>
 <li><a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/earth/earth_cloud.jpg">alpha map</a> pour les nuages</li>
 </ul>
 <p class="last">Créez une sphère autour de la Terre qui représente la couche nuageuse. Le matériau
-pour cette sphère doit être transparent (propriété <code class="docutils literal notranslate"><span class="pre">tranparent</span></code> à <code class="docutils literal notranslate"><span class="pre">true</span></code>). Utilisez
+pour cette sphère doit être transparent (propriété <code class="docutils literal notranslate"><span class="pre">transparent</span></code> à <code class="docutils literal notranslate"><span class="pre">true</span></code>). Utilisez
 la texture comme une <code class="docutils literal notranslate"><span class="pre">alphaMap</span></code> dans votre matériau pour contrôler la transparence.</p>
 </div>
 <div class="exercice admonition">
