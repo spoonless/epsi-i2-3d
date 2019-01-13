@@ -213,6 +213,120 @@
 <h1>WebGL<a class="headerlink" href="#webgl" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Une collection <a class="reference external" href="https://spoonless.github.io/webgl-intro/">d’exemples pour une introduction à WebGL</a>.</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Vous pouvez récupérer l’ensemble des exemples avancés de scène de ce cours
+à cette <a class="reference external" href="https://github.com/spoonless/tuto_threejs/tree/gh-pages">adresse</a>.</p>
+</div>
+<div class="section" id="idees-de-projets">
+<h1>Idées de projets<a class="headerlink" href="#idees-de-projets" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="exercice admonition">
+<p class="first admonition-title">Visualisation des tremblements de Terre</p>
+<p>L’API Web de USGS fournit des informations sur les tremblements de Terre (localisation, magnitude…).
+Pour obtenir la liste des tremblements de Terre pour les 30 derniers jours :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson
+</pre></div>
+</div>
+<p>Grâce aux résultats fournis par cette API:</p>
+<ul class="simple">
+<li>affichez la position de chaque
+tremblement de Terre sur une sphère représentant la Terre.</li>
+<li>un tremblement de Terre peut être représenté par une cercle dont la taille
+et la couleur dépend de son intensité</li>
+<li>un petit panneau fournit les infos chiffrés sur l’événement : date, intensité…</li>
+<li>Si l’intensité d’un tremblement de Terre dépasse un certain seuil (défini par l’utilisateur),
+ajoutez un élément graphique pour attirer l’attention de l’utilisateur et
+déplacez la caméra pour voir l’événement</li>
+</ul>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p>Pour réaliser ce projet, une tâche importante consiste à positionner correctement
+un point sur le globe selon sa longitude et sa latitude.</p>
+<p class="last">Pour localiser un tremblement de Terre, vous pouvez peindre directement une texture en utilisant une <a class="reference external" href="https://threejs.org/docs/index.html#api/en/textures/CanvasTexture">CanvasTexture</a>
+(vous trouverez <a class="reference external" href="https://threejs.org/examples/?q=texture#webgl_materials_texture_canvas">un exemple ici</a>)</p>
+</div>
+</div>
+<div class="exercice admonition">
+<p class="first admonition-title">Visualisation de données par pays</p>
+<p>Le site <a class="reference external" href="http://api.population.io/#!/countries/listCountries">World Population API</a>
+fournit une API Web pour collecter des données sur des pays.</p>
+<p>Par exemple, pour obtenir la population de la France au début de l’année 2019 :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl http://api.population.io/1.0/population/France/2019-01-01
+</pre></div>
+</div>
+<p>Affichez les données sous la forme de bâtons qui sont positionnés à la verticale
+de chaque pays sur une sphère représentant la Terre.</p>
+<p>L’utilisateur peut choisir les statistiques qui l’intéressent :</p>
+<ul class="simple">
+<li>population</li>
+<li>taux de mortalité</li>
+<li>pourcentage d’hommes et de femmes</li>
+</ul>
+<p>Un panneau s’affiche pour chaque pays pour donner les informations chiffrées.</p>
+<p>Idéalement, l’utilisateur peut sélectionner les pays qui l’intéressent en cliquant
+directement sur le globe terrestre.</p>
+<p>Pour ce mini-projet, limitez-vous à une dizaine de pays.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p>Utilisez une texture pour la <em>color map</em> qui affiche les frontières entre pays</p>
+<p>Pour afficher les bâtons vous devrez au préalable avoir choisi un point
+sur la sphère pour chaque pays supporté.</p>
+<p class="last">Pour permettre de sélectionner un pays, pensez que le <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Raycaster">Raycaster</a> peut fournir
+les coordonnées UV du point touché par le rayon. On peut ainsi avoir une <em>map</em> de pays
+dans laquelle chaque pays est associé à une couleur.</p>
+</div>
+</div>
+<div class="exercice admonition">
+<p class="first admonition-title">Visualisation des éléments atomiques</p>
+<p>Affichez le <a class="reference external" href="https://fr.wikipedia.org/wiki/Tableau_p%C3%A9riodique_des_%C3%A9l%C3%A9ments">tableau périodique des éléments</a>.
+Lorsque l’utilisateur choisit un élément, alors il visualise en 3D l’élément atomique avec
+le nombre de neutrons et de protons qui forment le noyau et les électrons qui tournent
+autour du noyau.</p>
+<p>L’utilisateur peut séparer les éléments du noyau pour pouvoir bien distinguer les neutrons
+des protons.</p>
+<p class="last">L’utilisateur peur activer ou désactiver l’animation des électrons autour du noyau.</p>
+</div>
+<div class="exercice admonition">
+<p class="first admonition-title">diaporama 3D</p>
+<p>Fournissez une bibliothèque JavaScript pour transformer une portion de page HTML
+en diaporama 3D. Vous devez créer une fonction JavaScript :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">domElement</span> <span class="o">=</span> <span class="nx">slideshow3d</span><span class="p">(</span><span class="nx">source</span><span class="p">);</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>source</dt>
+<dd><p class="first">L’élément DOM contenant la liste des éléments du diaporama. Cet élément
+peut contenir des éléments <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> pour le texte et <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> pour les images
+du diaporama.</p>
+<div class="last highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;source&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bonjour<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;image.png&quot;</span><span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Merci<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</dd>
+<dt>domElement</dt>
+<dd>La fonction retourne l’élément <code class="docutils literal notranslate"><span class="pre">canvas</span></code> qui permet l’affichage 3D.</dd>
+</dl>
+<p>L’utilisateur peut passer d’un <em>slide</em> au suivant en appuyant sur une touche
+ou en cliquant. Prévoyez plusieurs transitions 3D entre les <em>slides</em> (déplacement de caméra,
+rotation des <em>slides</em>…).</p>
+<p>Idéalement, les transitions pourraient être données par un attribut <code class="docutils literal notranslate"><span class="pre">data-transition</span></code>
+sur chaque élément HTML.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;source&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">data-transition</span><span class="o">=</span><span class="s">&quot;left-rotate&quot;</span><span class="p">&gt;</span>Bonjour<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">data-transition</span><span class="o">=</span><span class="s">&quot;zoom-in&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;image.png&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">data-transition</span><span class="o">=</span><span class="s">&quot;right-rotate&quot;</span><span class="p">&gt;</span>Merci<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Pour le texte 3D, vous pouvez utiliser la classe <a class="reference external" href="https://threejs.org/docs/index.html#api/en/geometries/TextBufferGeometry">TextBufferGeometry</a>.</p>
+</div>
+</div>
+</div>
 
 
            </div>
