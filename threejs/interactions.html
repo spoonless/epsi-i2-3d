@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les interactions &mdash; Documentation Visualisation 3D 1.0</title>
+  <title>Les interactions &mdash; Documentation Visualisation 3D </title>
   
 
   
@@ -20,13 +20,21 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
@@ -34,21 +42,16 @@
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Chargement de modèle" href="chargement_scene.html" />
     <link rel="prev" title="Les matériaux" href="materiaux.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -365,14 +368,14 @@ Le contrôleur met ainsi à jour les transformations de l’objet contrôlé.</p
 Puis dans la fonction <code class="docutils literal notranslate"><span class="pre">animate()</span></code> à la ligne 54, on commence par mettre à jour
 le contrôleur, qui va lui même mettre à jour la position de la caméra.</p>
 <div class="admonition tip">
-<p class="first admonition-title">Astuce</p>
-<p class="last">Rappelez-vous, qu’une instance de <a class="reference external" href="https://github.com/mrdoob/three.js/blob/dev/examples/js/controls/OrbitControls.js">OrbitControls</a> peut contrôler n’importe quel type
+<p class="admonition-title">Astuce</p>
+<p>Rappelez-vous, qu’une instance de <a class="reference external" href="https://github.com/mrdoob/three.js/blob/dev/examples/js/controls/OrbitControls.js">OrbitControls</a> peut contrôler n’importe quel type
 d’objet. Il est donc possible de contrôler la rotation d’un objet dans la scène
 et même d’une lumière.</p>
 </div>
 <div class="exercice admonition">
-<p class="first admonition-title">Le système planétaire (suite)</p>
-<p class="last">Ajoutez un contrôleur orbital autour de la Terre.</p>
+<p class="admonition-title">Le système planétaire (suite)</p>
+<p>Ajoutez un contrôleur orbital autour de la Terre.</p>
 </div>
 </div>
 </div>
@@ -591,7 +594,8 @@ normalisé</strong> (NDC : <em>Normalized Device Coordinates</em>). On peut util
 ci-dessous pour obtenir les coordonnées dans la fenêtre si le rendu se fait
 sur toute la fenêtre :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">getPositionOnScreen</span><span class="p">(</span><span class="nx">camera</span><span class="p">,</span> <span class="nx">object3d</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">vector</span> <span class="o">=</span> <span class="nx">object3d</span><span class="p">.</span><span class="nx">getWorldPosition</span><span class="p">().</span><span class="nx">project</span><span class="p">(</span><span class="nx">camera</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">vector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">();</span>
+  <span class="nx">object3d</span><span class="p">.</span><span class="nx">getWorldPosition</span><span class="p">(</span><span class="nx">vector</span><span class="p">).</span><span class="nx">project</span><span class="p">(</span><span class="nx">camera</span><span class="p">);</span>
   <span class="c1">// On passe des coordonnées dans le repère normalisé (NDC) aux</span>
   <span class="c1">// coordonnées de l&#39;écran</span>
   <span class="nx">vector</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="nx">vector</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">);</span>
@@ -603,11 +607,11 @@ sur toute la fenêtre :</p>
 </div>
 <p>Vous pouvez visualiser <a class="reference external" href="https://spoonless.github.io/tuto_threejs/annotation.html">un exemple d’utilisation de cette fonction</a>.</p>
 <div class="exercice admonition">
-<p class="first admonition-title">Le système planétaire (suite)</p>
+<p class="admonition-title">Le système planétaire (suite)</p>
 <p>Ajoutez une zone de texte en HTML à côté de la Terre et de la Lune.</p>
-<div class="last admonition tip">
-<p class="first admonition-title">Astuce</p>
-<p class="last">Attention, pour placer correctement les zones de texte, il faut connaître la
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Attention, pour placer correctement les zones de texte, il faut connaître la
 position des objets dans le monde pour calculer correctement leur projection. Utilisez la
 méthode <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.getWorldPosition">Object3D.getWorldPosition()</a> pour connaître les coordonnées d’un
 objet dans l’espace de coordonnées du monde.</p>
@@ -627,7 +631,7 @@ objet dans l’espace de coordonnées du monde.</p>
         <a href="chargement_scene.html" class="btn btn-neutral float-right" title="Chargement de modèle" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="materiaux.html" class="btn btn-neutral" title="Les matériaux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="materiaux.html" class="btn btn-neutral float-left" title="Les matériaux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -636,11 +640,12 @@ objet dans l’espace de coordonnées du monde.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@epsi.fr - CC-BY-SA
+        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/epsi-i5-3d/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-i2-3d/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -654,27 +659,16 @@ objet dans l’espace de coordonnées du monde.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

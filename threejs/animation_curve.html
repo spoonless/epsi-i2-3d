@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Animation à partir de courbes &mdash; Documentation Visualisation 3D 1.0</title>
+  <title>Animation à partir de courbes &mdash; Documentation Visualisation 3D </title>
   
 
   
@@ -20,34 +20,37 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="prev" title="Chargement de modèle" href="chargement_scene.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -407,8 +410,8 @@ par la géométrie.</p>
 </td></tr></table></div>
 <p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/40e7874c296783a3b34971d7f1b1a8f8/scene014.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">La méthode <a class="reference external" href="https://threejs.org/docs/index.html#api/en/extras/core/Curve.getPoints">getPoints</a> retourne un tableau contenant autant de points sur
+<p class="admonition-title">Note</p>
+<p>La méthode <a class="reference external" href="https://threejs.org/docs/index.html#api/en/extras/core/Curve.getPoints">getPoints</a> retourne un tableau contenant autant de points sur
 la courbe que demandé. Cette méthode permet de réaliser rapidement un
 échantillonnage pour construire une géométrie.</p>
 </div>
@@ -567,21 +570,21 @@ ensuite en déduire ligne 69, la position de l’objet le long du chemin. Notez 
 la méthode <a class="reference external" href="https://threejs.org/docs/index.html#api/en/extras/core/Curve.getPoint">getPoint</a> accepte en second paramètre un vecteur qu’elle met directement
 à jour.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Vous pouvez également utiliser la méthode <a class="reference external" href="https://threejs.org/docs/index.html#api/en/extras/core/Curve.getPointAt">getPointAt</a>. Cette méthode tient
+<p class="admonition-title">Note</p>
+<p>Vous pouvez également utiliser la méthode <a class="reference external" href="https://threejs.org/docs/index.html#api/en/extras/core/Curve.getPointAt">getPointAt</a>. Cette méthode tient
 compte de la courbure entre deux points et crée un mouvement uniforme tandis
 que <a class="reference external" href="https://threejs.org/docs/index.html#api/en/extras/core/Curve.getPoint">getPoint</a> crée des effets d’accélération et de décélération.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Vous pouvez tester un autre exemple à <a class="reference external" href="https://spoonless.github.io/tuto_threejs/curve.html">cette adresse</a>.</p>
+<p class="admonition-title">Note</p>
+<p>Vous pouvez tester un autre exemple à <a class="reference external" href="https://spoonless.github.io/tuto_threejs/curve.html">cette adresse</a>.</p>
 </div>
 </div>
 <div class="section" id="exercice">
 <h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="exercice admonition">
-<p class="first admonition-title">Modification de l’animation le long d’une courbe</p>
-<p class="last">Modifiez l’exemple ci-dessus afin que l’animation ne boucle pas. Lorsque la sphère
+<p class="admonition-title">Modification de l’animation le long d’une courbe</p>
+<p>Modifiez l’exemple ci-dessus afin que l’animation ne boucle pas. Lorsque la sphère
 arrive au bout de la courbe, elle doit simplement repartir en sens inverse.</p>
 </div>
 </div>
@@ -596,7 +599,7 @@ arrive au bout de la courbe, elle doit simplement repartir en sens inverse.</p>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="chargement_scene.html" class="btn btn-neutral" title="Chargement de modèle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="chargement_scene.html" class="btn btn-neutral float-left" title="Chargement de modèle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -605,11 +608,12 @@ arrive au bout de la courbe, elle doit simplement repartir en sens inverse.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@epsi.fr - CC-BY-SA
+        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/epsi-i5-3d/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-i2-3d/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -623,27 +627,16 @@ arrive au bout de la courbe, elle doit simplement repartir en sens inverse.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

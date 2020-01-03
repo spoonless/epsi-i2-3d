@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction et mise en place &mdash; Documentation Visualisation 3D 1.0</title>
+  <title>Introduction et mise en place &mdash; Documentation Visualisation 3D </title>
   
 
   
@@ -20,13 +20,21 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
@@ -34,21 +42,16 @@
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Objets et scène" href="objets_et_scene.html" />
     <link rel="prev" title="Sommaire" href="../index.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -219,14 +222,14 @@ dans un navigateur Web. <a class="reference external" href="https://threejs.org/
 une API de programmation dérivée de OpenGL ES qui est accessible depuis un navigateur
 Web. Il faut donc utiliser un navigateur Web et une machine qui supportent <a class="reference external" href="https://www.khronos.org/webgl/">WebGL</a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Vous pouvez tester le support de <a class="reference external" href="https://www.khronos.org/webgl/">WebGL</a> de votre navigateur Web en vous rendant
+<p class="admonition-title">Note</p>
+<p>Vous pouvez tester le support de <a class="reference external" href="https://www.khronos.org/webgl/">WebGL</a> de votre navigateur Web en vous rendant
 à <a class="reference external" href="https://get.webgl.org/">cette adresse</a>.</p>
 </div>
 <p><a class="reference external" href="https://threejs.org/">three.js</a> fournit principalement :</p>
 <ul class="simple">
-<li>un moteur de scène permettant de créer des rendus et des animations complexes</li>
-<li>un moteur de rendu temps réel</li>
+<li><p>un moteur de scène permettant de créer des rendus et des animations complexes</p></li>
+<li><p>un moteur de rendu temps réel</p></li>
 </ul>
 <div class="section" id="chargement-asynchrone-en-local">
 <h2>Chargement asynchrone en local<a class="headerlink" href="#chargement-asynchrone-en-local" title="Lien permanent vers ce titre">¶</a></h2>
@@ -237,16 +240,16 @@ navigateurs (comme Chrome) n’autorisent pas le chargement asynchrone pour des 
 ouverts directement depuis son disque dur. Pour contourner cette limitation, il suffit
 d’installer un serveur Web pour servir les fichiers depuis sa machine.</p>
 <div class="admonition tip">
-<p class="first admonition-title">Astuce</p>
+<p class="admonition-title">Astuce</p>
 <p>Si vous avez installé python 3 sur votre machine, vous pouvez très facilement
 disposer d’un serveur Web. Il suffit de lancer la commande suivante depuis le répertoire de travail :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3 -m http.server
 </pre></div>
 </div>
-<p class="last">Vous avez un serveur écoutant sur le port <strong>8000</strong> depuis le répertoire de travail.</p>
+<p>Vous avez un serveur écoutant sur le port <strong>8000</strong> depuis le répertoire de travail.</p>
 </div>
 <div class="admonition tip">
-<p class="first admonition-title">Astuce</p>
+<p class="admonition-title">Astuce</p>
 <p>Si vous utilisez Chrome et que vous ne voulez pas utiliser un serveur Web,
 il est possible d’autoriser le chargement asynchrone en désactivant
 la stratégie de sécurité depuis la ligne de commande :</p>
@@ -268,7 +271,7 @@ la stratégie de sécurité depuis la ligne de commande :</p>
 </pre></div>
 </div>
 </div>
-<p class="last">Le paramètre <code class="docutils literal notranslate"><span class="pre">--user-data-dir</span></code> indique le répertoire contenant les données de configuration
+<p>Le paramètre <code class="docutils literal notranslate"><span class="pre">--user-data-dir</span></code> indique le répertoire contenant les données de configuration
 de Chrome (le répertoire sera créé s’il n’existe pas).</p>
 </div>
 </div>
@@ -279,8 +282,8 @@ depuis <a class="reference external" href="https://threejs.org/build/three.js">h
 Vous pouvez également le référencer directement dans votre page HTML à partir de cette
 adresse.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Il existe une version minifiée disponible à cette adresse : <a class="reference external" href="https://threejs.org/build/three.min.js">https://threejs.org/build/three.min.js</a></p>
+<p class="admonition-title">Note</p>
+<p>Il existe une version minifiée disponible à cette adresse : <a class="reference external" href="https://threejs.org/build/three.min.js">https://threejs.org/build/three.min.js</a></p>
 </div>
 <p>Une page de base pour démarrer un projet <a class="reference external" href="https://threejs.org/">three.js</a> ressemble donc à :</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -360,14 +363,14 @@ de rendu avec la méthode <a class="reference external" href="https://threejs.or
 <p>L’appel à <code class="docutils literal notranslate"><span class="pre">setSize()</span></code> à la ligne 18 a pour conséquence de modifier la taille
 de l’élément <code class="docutils literal notranslate"><span class="pre">&lt;canvas&gt;</span></code> créé par le moteur de rendu.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Si vous le souhaitez, il est possible de fournir à la construction d’un
 <a class="reference external" href="https://threejs.org/docs/index.html#api/en/renderers/WebGLRenderer">WebGLRenderer</a> l’élément <code class="docutils literal notranslate"><span class="pre">&lt;canvas&gt;</span></code> à utiliser plutôt que de le laisser
 en créer un :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">WebGLRenderer</span><span class="p">({</span><span class="nx">canvas</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;monCanvas&quot;</span><span class="p">)});</span>
 </pre></div>
 </div>
-<p class="last">Reportez-vous à la documentation du <a class="reference external" href="https://threejs.org/docs/index.html#api/en/renderers/WebGLRenderer">WebGLRenderer</a> pour connaître toutes
+<p>Reportez-vous à la documentation du <a class="reference external" href="https://threejs.org/docs/index.html#api/en/renderers/WebGLRenderer">WebGLRenderer</a> pour connaître toutes
 les options de création.</p>
 </div>
 </div>
@@ -380,17 +383,17 @@ de base <a class="reference external" href="https://threejs.org/docs/index.html#
 Cette caméra définit une projection géométrique dite en perspective, qui imite
 le comportement de l’œil humain. La projection correspond à une pyramide partant
 du point de la caméra. Cette pyramide est tronquée par deux plans :</p>
-<dl class="docutils">
-<dt>near plan</dt>
-<dd>Ce plan correspond à la distance la plus proche de la caméra à partir de laquelle un objet
-de la scène sera visible</dd>
-<dt>far plan</dt>
-<dd>Ce plan correspond à la distance la plus éloignée de la caméra au delà de laquelle
-un objet de la scène ne sera plus visible</dd>
+<dl class="simple">
+<dt>near plan</dt><dd><p>Ce plan correspond à la distance la plus proche de la caméra à partir de laquelle un objet
+de la scène sera visible</p>
+</dd>
+<dt>far plan</dt><dd><p>Ce plan correspond à la distance la plus éloignée de la caméra au delà de laquelle
+un objet de la scène ne sera plus visible</p>
+</dd>
 </dl>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">On parle souvent de <strong>clipping</strong> pour indiquer qu’un objet de la scène n’est
+<p class="admonition-title">Note</p>
+<p>On parle souvent de <strong>clipping</strong> pour indiquer qu’un objet de la scène n’est
 pas pris en compte par la caméra pour le rendu lorsqu’il se situe devant
 le <strong>near plan</strong> ou derrière le <strong>far plan</strong>.</p>
 </div>
@@ -398,16 +401,16 @@ le <strong>near plan</strong> ou derrière le <strong>far plan</strong>.</p>
 dans lequel un objet sera visible de l’observateur.</p>
 <img alt="../_images/frustum.png" src="../_images/frustum.png" />
 <p>Pour créer un objet de type <a class="reference external" href="https://threejs.org/docs/index.html#api/en/cameras/PerspectiveCamera">PerspectiveCamera</a>, il faut indiquer 4 paramètres :</p>
-<dl class="docutils">
-<dt>fov (field of view)</dt>
-<dd>Le champ de vision correspondant à l’ange (en degré) vertical d’ouverture du <em>frustum</em>.</dd>
-<dt>aspect</dt>
-<dd>Le ratio entre la largeur et la hauteur. Pour éviter d’avoir une image déformée,
-ce ratio doit correspondre à celui du rapport largeur sur hauteur du <code class="docutils literal notranslate"><span class="pre">&lt;canvas&gt;</span></code></dd>
-<dt>near</dt>
-<dd>La distance du <strong>near plane</strong> dans l’unité de la scène.</dd>
-<dt>far</dt>
-<dd>La distance du <strong>far plane</strong> dans l’unité de la scène.</dd>
+<dl class="simple">
+<dt>fov (field of view)</dt><dd><p>Le champ de vision correspondant à l’ange (en degré) vertical d’ouverture du <em>frustum</em>.</p>
+</dd>
+<dt>aspect</dt><dd><p>Le ratio entre la largeur et la hauteur. Pour éviter d’avoir une image déformée,
+ce ratio doit correspondre à celui du rapport largeur sur hauteur du <code class="docutils literal notranslate"><span class="pre">&lt;canvas&gt;</span></code></p>
+</dd>
+<dt>near</dt><dd><p>La distance du <strong>near plane</strong> dans l’unité de la scène.</p>
+</dd>
+<dt>far</dt><dd><p>La distance du <strong>far plane</strong> dans l’unité de la scène.</p>
+</dd>
 </dl>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
 </pre></div>
@@ -415,8 +418,8 @@ ce ratio doit correspondre à celui du rapport largeur sur hauteur du <code clas
 <p>Un objet <a class="reference external" href="https://threejs.org/docs/index.html#api/en/cameras/Camera">Camera</a> maintient en interne une matrice mathématiques dite <strong>matrice
 de projection</strong> qui permet de réaliser les calculs lors de la création d’une image.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Une autre caméra très utile est la <a class="reference external" href="https://threejs.org/docs/index.html#api/en/cameras/OrthographicCamera">OrthographicCamera</a>. Cette caméra
+<p class="admonition-title">Note</p>
+<p>Une autre caméra très utile est la <a class="reference external" href="https://threejs.org/docs/index.html#api/en/cameras/OrthographicCamera">OrthographicCamera</a>. Cette caméra
 crée une projection orthographique qui ne prend pas en compte les points de fuite :
 les longueurs sont conservées quelle que soit la distance à la caméra.
 Ce type de caméra est utile pour des représentations de type CAD ou pour des rendus
@@ -436,10 +439,10 @@ d’une scène.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Il est possible de changer la couleur de fond de la scène en modifiant sa propriété
 <a class="reference external" href="https://threejs.org/docs/index.html#api/en/scenes/Scene.background">background</a> :</p>
-<div class="last highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// couleur de fond rouge</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// couleur de fond rouge</span>
 <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -541,7 +544,7 @@ appeler cette méthode pour finir.</p>
         <a href="objets_et_scene.html" class="btn btn-neutral float-right" title="Objets et scène" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Sommaire" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Sommaire" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -550,11 +553,12 @@ appeler cette méthode pour finir.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@epsi.fr - CC-BY-SA
+        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/epsi-i5-3d/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-i2-3d/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -568,27 +572,16 @@ appeler cette méthode pour finir.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

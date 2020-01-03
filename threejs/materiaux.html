@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les matériaux &mdash; Documentation Visualisation 3D 1.0</title>
+  <title>Les matériaux &mdash; Documentation Visualisation 3D </title>
   
 
   
@@ -20,13 +20,21 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
@@ -34,21 +42,16 @@
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les interactions" href="interactions.html" />
     <link rel="prev" title="Objets et scène" href="objets_et_scene.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -333,7 +336,7 @@ dans la scène.</p>
 <p>À la ligne 34, on passe en paramètre de la construction du <a class="reference external" href="https://threejs.org/docs/index.html#api/en/objects/Mesh">Mesh</a> un nouveau
 <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial">MeshBasicMaterial</a> pour lequel on précise une couleur rouge <code class="docutils literal notranslate"><span class="pre">0xFF0000</span></code>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Notez qu’un matériau possède des propriétés qui peuvent être changées pour modifier
 dynamiquement le rendu d’un objet. Ainsi, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial">MeshBasicMaterial</a> possède la propriété
 <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial.wireframe">wireframe</a> qui indique si l’objet doit être rendu en fil de fer. Il est très
@@ -470,7 +473,7 @@ facile de créer un rendu qui peut être contrôlé au moyen du clavier :</p>
 </pre></div>
 </td></tr></table></div>
 <p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/7ca440b53e19c3bcfa72a8db4c823cf2/scene008.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
-<p class="last">À la ligne 40, on position la valeur de la propriété <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial.wireframe">wireframe</a> à <code class="docutils literal notranslate"><span class="pre">true</span></code>.
+<p>À la ligne 40, on position la valeur de la propriété <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial.wireframe">wireframe</a> à <code class="docutils literal notranslate"><span class="pre">true</span></code>.
 Des lignes 58 à 60, on enregistre un <em>listener</em> pour inverser l’état de cette
 propriété lorsqu’on presse un touche du clavier.</p>
 </div>
@@ -481,44 +484,43 @@ propriété lorsqu’on presse un touche du clavier.</p>
 réalise un ombrage sur le modèle pour donner un effet plus ou moins réaliste d’éclairage.</p>
 <p>Ainsi ces matériaux interagissent avec les lumières présentes dans la scène.
 Pour insérer des lumières dans la scène, <a class="reference external" href="https://threejs.org/">three.js</a> offre plusieurs types différents :</p>
-<dl class="docutils">
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/AmbientLight">AmbientLight</a></dt>
-<dd>Une lumière ambiante sert à fournir une illumination globale à la scène. Cette source
+<dl>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/AmbientLight">AmbientLight</a></dt><dd><p>Une lumière ambiante sert à fournir une illumination globale à la scène. Cette source
 lumineuse n’a pas de position, elle contribue à l’illumination de la scène en tout point.
 Elle sert à simuler la présence des lumières indirectes et on l’utilise
-généralement à une faible intensité pour donner une ambiance générale.</dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/DirectionalLight">DirectionalLight</a></dt>
-<dd><p class="first">La lumière directionnelle représente une lumière dont tous les rayons sont parallèles.
+généralement à une faible intensité pour donner une ambiance générale.</p>
+</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/DirectionalLight">DirectionalLight</a></dt><dd><p>La lumière directionnelle représente une lumière dont tous les rayons sont parallèles.
 Ainsi la position de la lumière dans la scène ne sert qu’à déterminer le vecteur
 directeur des rayons lumineux.</p>
-<p class="last">Ce type de lumière représente des lumières très distantes (à la limite de l’infini)
+<p>Ce type de lumière représente des lumières très distantes (à la limite de l’infini)
 et très puissante. Elle est généralement utilisée pour simuler un éclairage par le soleil.</p>
 </dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/HemisphereLight">HemisphereLight</a></dt>
-<dd>La lumière hémisphérique simule un dôme qui émet de la lumière au dessus et en dessous de la scène.
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/HemisphereLight">HemisphereLight</a></dt><dd><p>La lumière hémisphérique simule un dôme qui émet de la lumière au dessus et en dessous de la scène.
 Ce type d’éclairage permet de simuler un éclairage du ciel en extérieur en
-prenant en compte l’éclairage indirect du sol.</dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/PointLight">PointLight</a></dt>
-<dd>Ce type de lumière est émise depuis un point (la position de la lumière dans la scène
+prenant en compte l’éclairage indirect du sol.</p>
+</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/PointLight">PointLight</a></dt><dd><p>Ce type de lumière est émise depuis un point (la position de la lumière dans la scène
 à donc beaucoup d’importance) dans toutes les directions. De plus, l’intensité de
 la lumière décroît à mesure qu’on s’éloigne de la source.
-Ce type de lumière permet de simuler un éclairage par une ampoule.</dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/RectAreaLight">RectAreaLight</a></dt>
-<dd>Ce type de lumière est émise de manière uniforme depuis un plan. Ce type de lumière
+Ce type de lumière permet de simuler un éclairage par une ampoule.</p>
+</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/RectAreaLight">RectAreaLight</a></dt><dd><p>Ce type de lumière est émise de manière uniforme depuis un plan. Ce type de lumière
 permet de simuler un éclairage par une fenêtre par exemple. Comme pour la précédente,
 l’intensité lumineuse décroît à mesure qu’on s’éloigne de la source. Cette
 source de lumière ne fonctionne que pour les matériaux PBR : <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial">MeshStandardMaterial</a>
-et <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhysicalMaterial">MeshPhysicalMaterial</a> (Cf. ci-dessous).</dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/SpotLight">Spotlight</a></dt>
-<dd>Ce type de lumière est émise depuis un point et dans une direction. Le spot
+et <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhysicalMaterial">MeshPhysicalMaterial</a> (Cf. ci-dessous).</p>
+</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/lights/SpotLight">Spotlight</a></dt><dd><p>Ce type de lumière est émise depuis un point et dans une direction. Le spot
 simule un cône de lumière. L’intensité lumineuse décroît à mesure que l’on s’éloigne
-de la direction du spot.</dd>
+de la direction du spot.</p>
+</dd>
 </dl>
 <p>Une lumière n’a pas de représentation dans la scène, elle est simplement exploitée
 comme source pour le rendu des matériaux qui nécessitent un éclairage.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Pour du débogage, si vous voulez faire apparaître la position des lumières dans la scène, vous pouvez utiliser
+<p class="admonition-title">Note</p>
+<p>Pour du débogage, si vous voulez faire apparaître la position des lumières dans la scène, vous pouvez utiliser
 les objets correspondants : <a class="reference external" href="https://threejs.org/docs/api/en/helpers/DirectionalLightHelper.html">DirectionalLightHelper</a>, <a class="reference external" href="https://threejs.org/docs/api/en/helpers/HemisphereLightHelper.html">HemisphereLightHelper</a>,
 <a class="reference external" href="https://threejs.org/docs/api/en/helpers/PointLightHelper.html">PointLightHelper</a>, <a class="reference external" href="https://threejs.org/docs/api/en/helpers/RectAreaLightHelper.html">RectAreaLightHelper</a>, <a class="reference external" href="https://threejs.org/docs/api/en/helpers/RectAreaLightHelper.html">RectAreaLightHelper</a>, <a class="reference external" href="https://threejs.org/docs/api/en/helpers/SpotLightHelper.html">SpotLightHelper</a>.</p>
 </div>
@@ -526,33 +528,33 @@ les objets correspondants : <a class="reference external" href="https://threejs.
 <div class="section" id="les-materiaux-reagissant-a-la-lumiere">
 <h2>Les matériaux réagissant à la lumière<a class="headerlink" href="#les-materiaux-reagissant-a-la-lumiere" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il existe cinq matériaux réagissant à la lumière pour un rendu plus ou moins réaliste :</p>
-<dl class="docutils">
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshLambertMaterial">MeshLambertMaterial</a></dt>
-<dd>Ce matériau est basé sur le modèle mathématique de <a class="reference external" href="https://en.wikipedia.org/wiki/Gouraud_shading">Gouraud</a> pour calculer les
+<dl class="simple">
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshLambertMaterial">MeshLambertMaterial</a></dt><dd><p>Ce matériau est basé sur le modèle mathématique de <a class="reference external" href="https://en.wikipedia.org/wiki/Gouraud_shading">Gouraud</a> pour calculer les
 ombrages. C’est le modèle le plus ancien, le plus performant mais également
 le moins réaliste. Il se base principalement sur la couleur de l’objet et les
-lumières de la scène.</dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhongMaterial">MeshPhongMaterial</a></dt>
-<dd>Ce matériau est basé sur le modèle mathématique de <a class="reference external" href="https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_shading_model">Blinn-Phong</a> qui est une amélioration
+lumières de la scène.</p>
+</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhongMaterial">MeshPhongMaterial</a></dt><dd><p>Ce matériau est basé sur le modèle mathématique de <a class="reference external" href="https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_shading_model">Blinn-Phong</a> qui est une amélioration
 du modèle de <a class="reference external" href="https://en.wikipedia.org/wiki/Gouraud_shading">Gouraud</a>. En plus de la couleur et de la lumière, ce matériau
 tient compte de la spécularité, c’est-à-dire de l’incidence des rayons lumineux
 par rapport à l’observateur pour faire ressortir des effets de réflexion des sources
 lumineuses. Ce matériau reste peu réaliste mais à l’avantage d’être relativement
-peu consommateur en de temps de calcul.</dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshToonMaterial">MeshToonMaterial</a></dt>
-<dd>Ce matériau est basé sur le <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhongMaterial">MeshPhongMaterial</a> pour réaliser du <em>toon shading</em>.
+peu consommateur en de temps de calcul.</p>
+</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshToonMaterial">MeshToonMaterial</a></dt><dd><p>Ce matériau est basé sur le <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhongMaterial">MeshPhongMaterial</a> pour réaliser du <em>toon shading</em>.
 Ce type de rendu ne se veut pas réaliste et permet de créer des dégradés d’ombrage
-par bande type <em>dessins-animées</em>.</dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial">MeshStandardMaterial</a></dt>
-<dd>Ce matériau est basé sur le principe de rendu <a class="reference external" href="https://fr.wikipedia.org/wiki/Rendu_physique_r%C3%A9aliste">PBR</a> (<em>Physically Based Rendering</em>).
+par bande type <em>dessins-animées</em>.</p>
+</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial">MeshStandardMaterial</a></dt><dd><p>Ce matériau est basé sur le principe de rendu <a class="reference external" href="https://fr.wikipedia.org/wiki/Rendu_physique_r%C3%A9aliste">PBR</a> (<em>Physically Based Rendering</em>).
 Ce type de matériau permet des rendus beaucoup plus réalistes en prenant notamment
 en compte les principes optiques de réflexion des surfaces, de l’effet de Fresnel
 et du principe de conservation de l’énergie. Ce matériau est cependant plus complexe
-à manipuler.</dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhysicalMaterial">MeshPhysicalMaterial</a></dt>
-<dd>Ce matériau est basé sur le <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial">MeshStandardMaterial</a> en ajoutant le principe
+à manipuler.</p>
+</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhysicalMaterial">MeshPhysicalMaterial</a></dt><dd><p>Ce matériau est basé sur le <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial">MeshStandardMaterial</a> en ajoutant le principe
 du <em>clear coat</em> afin de simuler une pellicule brillante qui recouvre certains
-matériaux comme la peinture de voiture par exemple.</dd>
+matériaux comme la peinture de voiture par exemple.</p>
+</dd>
 </dl>
 <p>L’exemple ci-dessous crée un objet avec un matériau de type <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhongMaterial">MeshPhongMaterial</a>
 ainsi que trois lumières.</p>
@@ -685,20 +687,20 @@ ainsi que trois lumières.</p>
 </td></tr></table></div>
 <p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/bddff869177dba0f7b2ddd7c6ae41bd4/scene009.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Vous trouverez à <a class="reference external" href="https://spoonless.github.io/tuto_threejs/lights.html">cette adresse</a>
+<p class="admonition-title">Note</p>
+<p>Vous trouverez à <a class="reference external" href="https://spoonless.github.io/tuto_threejs/lights.html">cette adresse</a>
 une scène pour tester les matériaux et les lumières.</p>
 </div>
 <div class="section" id="excercice">
 <h3>Excercice<a class="headerlink" href="#excercice" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="exercice admonition">
-<p class="first admonition-title">Le système planétaire (suite)</p>
+<p class="admonition-title">Le système planétaire (suite)</p>
 <p>Ajoutez des matériaux pour la Terre et la Lune. Pour l’instant utilisez du
 bleu pour la Terre et du gris pour la Lune.</p>
 <p>Ajoutez des lumières pour la scène :</p>
-<ul class="last simple">
-<li>Une lumière ambiante très faible pour simuler l’éclairage du cosmos</li>
-<li>Une lumière directionnelle pour le Soleil.</li>
+<ul class="simple">
+<li><p>Une lumière ambiante très faible pour simuler l’éclairage du cosmos</p></li>
+<li><p>Une lumière directionnelle pour le Soleil.</p></li>
 </ul>
 </div>
 </div>
@@ -720,8 +722,8 @@ position (0, 0) représente le point en bas à gauche de la texture et la positi
 pour former une sphère. Mais chaque vertex possède également des coordonnées (u, v)
 pour indiquer sa position sur la texture à appliquer au modèle.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Pour les objets de base créés par <a class="reference external" href="https://threejs.org/">three.js</a> (comme les cubes, les sphères…),
+<p class="admonition-title">Note</p>
+<p>Pour les objets de base créés par <a class="reference external" href="https://threejs.org/">three.js</a> (comme les cubes, les sphères…),
 les <em>vertices</em> possèdent déjà des coordonnées UV. Pour ses propres modèles,
 créer des coordonnées UV peut s’avérer plus compliqué. Il vaut mieux pour cela
 utiliser un outil de modélisation 3D qui supporte le dépliage d’UV manuel ou automatique.</p>
@@ -754,8 +756,8 @@ possible de lancer un rendu :</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Les images qui doivent être utilisées comme <em>map</em> par les matériaux doivent
+<p class="admonition-title">Note</p>
+<p>Les images qui doivent être utilisées comme <em>map</em> par les matériaux doivent
 avoir une largeur et une hauteur qui correspondent à une puissance de 2 : 512x512,
 1024x1024, 4096x2048… Il s’agit d’une optimisation de WebGL car ces images
 vont devoir être transférées dans la mémoire de la carte graphique. Si vos
@@ -763,7 +765,7 @@ images n’ont pas la bonne dimension, <a class="reference external" href="https
 au prix d’un traitement supplémentaire.</p>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>L’utilisation de texture suppose la génération d’un <em>shader</em> particulier par
 <a class="reference external" href="https://threejs.org/">three.js</a>. Un <em>shader</em> est un programme qui est compilé et exécuté par la
 carte graphique. Si vous voulez modifier un matériau (par exemple ajouter
@@ -771,7 +773,7 @@ ou supprimer une texture) alors que la scène a déjà été rendue une fois,
 vous <strong>devez</strong> indiquer à <a class="reference external" href="https://threejs.org/">three.js</a> qu’il doit créer un nouveau <em>shader</em>
 que la carte graphique doit recompiler. Pour cela, on passe la propriété
 <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/Material.needsUpdate">needsUpdate</a> du matériau à <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
-<div class="last highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mesh</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">needsUpdate</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mesh</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">needsUpdate</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -865,8 +867,8 @@ Il faut utiliser l’attribut <code class="docutils literal notranslate"><span c
 fois la texture chargée, l’associe comme <em>color map</em> au matériau du <em>mesh</em> et
 génère un rendu.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Vous pouvez visualiser la scène <a class="reference external" href="https://spoonless.github.io/tuto_threejs/webgllogo.html">ici</a>.</p>
+<p class="admonition-title">Note</p>
+<p>Vous pouvez visualiser la scène <a class="reference external" href="https://spoonless.github.io/tuto_threejs/webgllogo.html">ici</a>.</p>
 </div>
 </div>
 <div class="section" id="les-autres-types-de-textures">
@@ -875,62 +877,62 @@ génère un rendu.</p>
 On distingue ainsi les textures selon le type d’information qu’elles contiennent.
 Tous les matériaux pour les <em>meshes</em> fournis par <a class="reference external" href="https://threejs.org/">three.js</a> acceptent différents types
 de maps pour faire varier le rendu de l’objet. Les plus courantes sont :</p>
-<dl class="docutils">
-<dt>map (color map)</dt>
-<dd>Cette texture stocke la couleur</dd>
-<dt>alphaMap</dt>
-<dd>Cette texture stocke la transparence. Elle agit comme un masque.</dd>
-<dt>bumpMap</dt>
-<dd>Cette texture stocke des variations de hauteurs (sous la forme de dégradé du noir
+<dl class="simple">
+<dt>map (color map)</dt><dd><p>Cette texture stocke la couleur</p>
+</dd>
+<dt>alphaMap</dt><dd><p>Cette texture stocke la transparence. Elle agit comme un masque.</p>
+</dd>
+<dt>bumpMap</dt><dd><p>Cette texture stocke des variations de hauteurs (sous la forme de dégradé du noir
 au blanc) sur la surface pour simuler de légères déformations selon l’angle
-de la lumière.</dd>
-<dt>normalMap</dt>
-<dd>Comme la précédente, la <em>normal map</em> permet de simuler des légères déformations
+de la lumière.</p>
+</dd>
+<dt>normalMap</dt><dd><p>Comme la précédente, la <em>normal map</em> permet de simuler des légères déformations
 selon l’angle de la lumière. Dans cette texture, on stocke la variation au vecteur
 normal de la face. La plupart des <em>normal maps</em> utilise le repère de coordonnées
 tangent à la face pour lequel le vecteur normal de la face vaut (0, 0, 1). Les
 informations de la texture ne correspondent donc pas à de la couleur mais bien
-à des coordonnées de vecteur entre 0 et 1.</dd>
-<dt>aoMap</dt>
-<dd>Stocke les informations d’occlusion ambiante (AO pour <em>Ambient Occlusion</em>)
-pour simuler les zones d’ombre générées par l’objet sur lui-même.</dd>
+à des coordonnées de vecteur entre 0 et 1.</p>
+</dd>
+<dt>aoMap</dt><dd><p>Stocke les informations d’occlusion ambiante (AO pour <em>Ambient Occlusion</em>)
+pour simuler les zones d’ombre générées par l’objet sur lui-même.</p>
+</dd>
 </dl>
 <p>Pour les matériaux <a class="reference external" href="https://fr.wikipedia.org/wiki/Rendu_physique_r%C3%A9aliste">PBR</a> <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial">MeshStandardMaterial</a> et <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhysicalMaterial">MeshPhysicalMaterial</a>, il existe
 également les maps :</p>
-<dl class="docutils">
-<dt>metalnessMap</dt>
-<dd>Cette texture indique les parties métalliques et les parties diélectriques (non métalliques).</dd>
-<dt>roughnessMap</dt>
-<dd>Cette texture indique la capacité de réflexion d’un matériau entre 0 (réflexion
-parfaite) et 1 (réflexion minimale).</dd>
+<dl class="simple">
+<dt>metalnessMap</dt><dd><p>Cette texture indique les parties métalliques et les parties diélectriques (non métalliques).</p>
+</dd>
+<dt>roughnessMap</dt><dd><p>Cette texture indique la capacité de réflexion d’un matériau entre 0 (réflexion
+parfaite) et 1 (réflexion minimale).</p>
+</dd>
 </dl>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Vous pouvez visualiser <a class="reference external" href="https://spoonless.github.io/tuto_threejs/leaf.html">une scène</a> pour
+<p class="admonition-title">Note</p>
+<p>Vous pouvez visualiser <a class="reference external" href="https://spoonless.github.io/tuto_threejs/leaf.html">une scène</a> pour
 tester l’effet de différentes <em>maps</em>.</p>
 </div>
 <div class="exercice admonition">
-<p class="first admonition-title">Le système planétaire (suite)</p>
+<p class="admonition-title">Le système planétaire (suite)</p>
 <p>Ajoutez des textures pour les planètes. Vous pouvez chercher vos propres textures
 sur Internet ou utiliser les suivantes :</p>
-<ul class="last simple">
-<li><a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/earth/earth_color.jpg">color map pour la Terre</a></li>
-<li><a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/earth/earth_normal.jpg">normal map pour la Terre</a></li>
-<li><a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/moon/moon_color.jpg">color map pour la Lune</a></li>
+<ul class="simple">
+<li><p><a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/earth/earth_color.jpg">color map pour la Terre</a></p></li>
+<li><p><a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/earth/earth_normal.jpg">normal map pour la Terre</a></p></li>
+<li><p><a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/moon/moon_color.jpg">color map pour la Lune</a></p></li>
 </ul>
 </div>
 <div class="exercice admonition">
-<p class="first admonition-title">Le système planétaire (suite)</p>
+<p class="admonition-title">Le système planétaire (suite)</p>
 <p>Ajoutez des nuages autour de la Terre :</p>
 <ul class="simple">
-<li><a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/earth/earth_cloud.jpg">alpha map</a> pour les nuages</li>
+<li><p><a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/earth/earth_cloud.jpg">alpha map</a> pour les nuages</p></li>
 </ul>
-<p class="last">Créez une sphère autour de la Terre qui représente la couche nuageuse. Le matériau
+<p>Créez une sphère autour de la Terre qui représente la couche nuageuse. Le matériau
 pour cette sphère doit être transparent (propriété <code class="docutils literal notranslate"><span class="pre">transparent</span></code> à <code class="docutils literal notranslate"><span class="pre">true</span></code>). Utilisez
 la texture comme une <code class="docutils literal notranslate"><span class="pre">alphaMap</span></code> dans votre matériau pour contrôler la transparence.</p>
 </div>
 <div class="exercice admonition">
-<p class="first admonition-title">Le système planétaire (suite)</p>
+<p class="admonition-title">Le système planétaire (suite)</p>
 <p>Ajoutez la voie lactée et les galaxies en fond. Pour cela, utilisez un <em>environment map</em>.
 Une <em>environment map</em> est composée de six textures qui correspondent aux six
 faces d’un cube (comme si la scène était enfermée dans un cube). On parle de texture
@@ -946,9 +948,9 @@ On positionne ensuite cette texture dans la propriété <a class="reference exte
 <a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/milkyway/4.jpg">4.jpg</a>,
 <a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/milkyway/5.jpg">5.jpg</a>,
 <a class="reference external" href="https://spoonless.github.io/tuto_threejs/maps/milkyway/6.jpg">6.jpg</a>.</p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Une <em>environmentMap</em> est également utile pour les matériaux <a class="reference external" href="https://fr.wikipedia.org/wiki/Rendu_physique_r%C3%A9aliste">PBR</a> (
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Une <em>environmentMap</em> est également utile pour les matériaux <a class="reference external" href="https://fr.wikipedia.org/wiki/Rendu_physique_r%C3%A9aliste">PBR</a> (
 <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial">MeshStandardMaterial</a> et <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshPhysicalMaterial">MeshPhysicalMaterial</a>) afin de simuler la réflexion,
 notamment pour les matériaux simulant des métaux.</p>
 </div>
@@ -1118,8 +1120,8 @@ qui sont capables de produire des ombres (<a class="reference external" href="ht
 </td></tr></table></div>
 <p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/58df5a771cd186d224752f5df091c146/scene016.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <div class="admonition tip">
-<p class="first admonition-title">Astuce</p>
-<p class="last">Pour les objets non animés, on peut pré-calculer la projection des ombres et
+<p class="admonition-title">Astuce</p>
+<p>Pour les objets non animés, on peut pré-calculer la projection des ombres et
 stocker cette information dans une texture que l’on utilise ensuite comme
 <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshStandardMaterial.lightMap">lightMap</a>.</p>
 </div>
@@ -1137,7 +1139,7 @@ stocker cette information dans une texture que l’on utilise ensuite comme
         <a href="interactions.html" class="btn btn-neutral float-right" title="Les interactions" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="objets_et_scene.html" class="btn btn-neutral" title="Objets et scène" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="objets_et_scene.html" class="btn btn-neutral float-left" title="Objets et scène" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -1146,11 +1148,12 @@ stocker cette information dans une texture que l’on utilise ensuite comme
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@epsi.fr - CC-BY-SA
+        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/epsi-i5-3d/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-i2-3d/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -1164,27 +1167,16 @@ stocker cette information dans une texture que l’on utilise ensuite comme
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

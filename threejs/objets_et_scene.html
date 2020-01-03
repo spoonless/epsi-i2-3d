@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Objets et scène &mdash; Documentation Visualisation 3D 1.0</title>
+  <title>Objets et scène &mdash; Documentation Visualisation 3D </title>
   
 
   
@@ -20,13 +20,21 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
@@ -34,21 +42,16 @@
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les matériaux" href="materiaux.html" />
     <link rel="prev" title="Introduction et mise en place" href="introduction.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -224,8 +227,8 @@ alors le centre se situe en bas à gauche de l’écran et l’axe Z pointe vers
 de l’écran. Ce système de coordonnées est dit à main droite.</p>
 <img alt="../_images/opengl_coordinate_system.png" src="../_images/opengl_coordinate_system.png" />
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Par défaut, lorsqu’on crée une caméra, celle-ci est placée à l’origine de la scène
+<p class="admonition-title">Note</p>
+<p>Par défaut, lorsqu’on crée une caméra, celle-ci est placée à l’origine de la scène
 (0, 0, 0) et pointe vers l’axe -Z.</p>
 </div>
 <img alt="../_images/opengl_coordinate_system_with_camera.png" src="../_images/opengl_coordinate_system_with_camera.png" />
@@ -325,13 +328,12 @@ de créer les <em>vertices</em> et les faces pour des figures élémentaires tel
 <h2>Les transformations dans l’espace<a class="headerlink" href="#les-transformations-dans-l-espace" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une instance de <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D">Object3D</a> possède des propriétés qui définissent son positionnement
 dans l’espace local de coordonnées :</p>
-<dl class="docutils">
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.position">position</a></dt>
-<dd>indique la position dans l’espace. Par défaut : (0, 0, 0)</dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotation">rotation</a></dt>
-<dd><p class="first">indique la rotation en radians autour des axes X, Y, Z (rotation d’Euler)</p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
+<dl>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.position">position</a></dt><dd><p>indique la position dans l’espace. Par défaut : (0, 0, 0)</p>
+</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotation">rotation</a></dt><dd><p>indique la rotation en radians autour des axes X, Y, Z (rotation d’Euler)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Pour passer d’une valeur en degrés à une valeur en radians, vous pouvez utiliser
 la méthode :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">THREE</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">degToRad</span><span class="p">(</span><span class="nx">degrees</span> <span class="o">:</span> <span class="nx">Float</span><span class="p">)</span>
@@ -339,21 +341,21 @@ la méthode :</p>
 </div>
 <p>Pour passer d’une valeur en radians à une valeur en degrés, vous pouvez utiliser
 la méthode :</p>
-<div class="last highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">THREE</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">radToDeg</span><span class="p">(</span><span class="nx">radians</span> <span class="o">:</span> <span class="nx">Float</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">THREE</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">radToDeg</span><span class="p">(</span><span class="nx">radians</span> <span class="o">:</span> <span class="nx">Float</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </dd>
-<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.scale">scale</a></dt>
-<dd>indique la mise à l’échelle suivant les axes X, Y, Z. Par défaut : (1, 1, 1)</dd>
+<dt><a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.scale">scale</a></dt><dd><p>indique la mise à l’échelle suivant les axes X, Y, Z. Par défaut : (1, 1, 1)</p>
+</dd>
 </dl>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p><a class="reference external" href="https://threejs.org/">three.js</a> applique <strong>toujours</strong> ces propriétés dans le même ordre :</p>
-<ol class="last arabic simple">
-<li>mise à l’échelle (<em>scale</em>)</li>
-<li>rotation</li>
-<li>position</li>
+<ol class="arabic simple">
+<li><p>mise à l’échelle (<em>scale</em>)</p></li>
+<li><p>rotation</p></li>
+<li><p>position</p></li>
 </ol>
 </div>
 <p>La méthode <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.lookAt">lookAt</a> est également très pratique (surtout avec la caméra) puisqu’elle
@@ -416,11 +418,11 @@ le <a class="reference external" href="https://threejs.org/docs/index.html#api/e
 <p>Il existe également des méthodes utilitaires dans la classe <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D">Object3D</a> permettant de réaliser
 des transformations de coordonnées :</p>
 <ul class="simple">
-<li>translation : <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.translateOnAxis">translateOnAxis</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.translateX">translateX</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.translateY">translateY</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.translateZ">translateZ</a></li>
-<li>rotation selon un axe : <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateOnAxis">rotateOnAxis</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateOnWorldAxis">rotateOnWorldAxis</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateX">rotateX</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateY">rotateY</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateZ">rotateZ</a></li>
+<li><p>translation : <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.translateOnAxis">translateOnAxis</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.translateX">translateX</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.translateY">translateY</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.translateZ">translateZ</a></p></li>
+<li><p>rotation selon un axe : <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateOnAxis">rotateOnAxis</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateOnWorldAxis">rotateOnWorldAxis</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateX">rotateX</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateY">rotateY</a>, <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D.rotateZ">rotateZ</a></p></li>
 </ul>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>L’ordre dans lequel vous appliquez les transformations (c’est-à-dire l’ordre
 d’appel de ces méthodes) est important. Les opérations seront réalisées dans
 <strong>l’ordre inverse</strong>. Ainsi si vous appelez :</p>
@@ -428,7 +430,7 @@ d’appel de ces méthodes) est important. Les opérations seront réalisées da
 <span class="nx">obj</span><span class="p">.</span><span class="nx">translateX</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </pre></div>
 </div>
-<p class="last">Pour un objet situé initialement à l’origine de la scène (0, 0, 0).
+<p>Pour un objet situé initialement à l’origine de la scène (0, 0, 0).
 D’abord <a class="reference external" href="https://threejs.org/">three.js</a> effectue une translation de l’objet sur son axe local X puis
 <a class="reference external" href="https://threejs.org/">three.js</a> effectue une rotation de 180° sur l’axe Y. Donc, l’objet
 se trouvera au final en position (-2, 0, 0) !</p>
@@ -442,11 +444,11 @@ réaliser des animations.</p>
 <div class="section" id="exercice">
 <h3>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="exercice admonition">
-<p class="first admonition-title">Contrôler les transformations d’un objet</p>
+<p class="admonition-title">Contrôler les transformations d’un objet</p>
 <p>Créez une page HTML avec un canevas faisant le rendu 3D d’un cube (<a class="reference external" href="https://threejs.org/docs/index.html#api/en/geometries/BoxGeometry">BoxGeometry</a>). Ajoutez
 un formulaire HTML permettant de contrôler la position (sur les axes X, Y et Z),
 la rotation (sur les axes X, Y et Z) et la mise à l’échelle du cube.</p>
-<p class="last">Pour le formulaire, vous pouvez utiliser des <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> de type <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">range</a>. Si
+<p>Pour le formulaire, vous pouvez utiliser des <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> de type <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range">range</a>. Si
 vous le souhaitez, vous pouvez aussi utiliser la bibliothèque JavaScript
 <a class="reference external" href="http://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage">dat.GUI</a> qui permet d’ajouter assez facilement des <em>widgets</em> pour contrôler
 le contenu d’une page.</p>
@@ -573,7 +575,7 @@ doit être rafraîchie (généralement la méthode est appelée au bout de 1/60 
 elle-même en paramètre de <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame</a> (ligne 47) avant d’appeler le <em>renderer</em>
 pour faire un rendu de l’image.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>Il faut garder à l’esprit que la fonction passée en paramètre de <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame</a>
 devrait être appelée environ 60 fois par seconde. Il est donc important qu’elle
 s’exécute aussi rapidement que possible. Il faut donc penser à réaliser le
@@ -581,7 +583,7 @@ plus de traitement avant de démarrer l’animation. Il faut également éviter 
 créer trop d’objets lors de son exécution. À ce titre, <a class="reference external" href="https://threejs.org/">three.js</a> fournit beaucoup
 de méthodes qui, soit retournent de nouveaux objets, soit acceptent un paramètre
 de sortie qui sera mis à jour afin d’éviter de créer inutilement de nouveaux objets.</p>
-<p class="last">Si vous voulez monitorer les performances de votre scène, vous pouvez utiliser
+<p>Si vous voulez monitorer les performances de votre scène, vous pouvez utiliser
 la bibliothèque <a class="reference external" href="https://github.com/mrdoob/stats.js/">stats.js</a> pour afficher des informations de débogage (notamment
 le FPS).</p>
 </div>
@@ -825,7 +827,7 @@ dans la hiérarchie d’objets et de contrôler plus facilement les transformati
 de coordonnées local et le groupe auquel ils appartiennent tourne autour de son
 axe Z</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Pour vous aider à visualiser les transformations, vous pouvez faire apparaître
 les axes X, Y, Z grâce à l’objet 3D <a class="reference external" href="https://threejs.org/docs/index.html#api/en/helpers/AxesHelper">AxesHelper</a> qui prend en paramètre de construction
 la longueur des axes à afficher.</p>
@@ -833,22 +835,22 @@ la longueur des axes à afficher.</p>
 <span class="nx">cube1</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">AxesHelper</span><span class="p">(</span><span class="mf">1.3</span><span class="p">));</span>
 </pre></div>
 </div>
-<p class="last">Vous pouvez <a class="reference download internal" download="" href="../_downloads/b1e76746f569b1432ee08376202cd656/scene006b.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">la</span> <span class="pre">même</span> <span class="pre">scène</span> <span class="pre">avec</span> <span class="pre">l'affichage</span> <span class="pre">des</span> <span class="pre">axes</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/b1e76746f569b1432ee08376202cd656/scene006b.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">la</span> <span class="pre">même</span> <span class="pre">scène</span> <span class="pre">avec</span> <span class="pre">l'affichage</span> <span class="pre">des</span> <span class="pre">axes</span></code></a>.</p>
 </div>
 </div>
 <div class="section" id="excercice">
 <h3>Excercice<a class="headerlink" href="#excercice" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="exercice admonition">
-<p class="first admonition-title">Un premier système planétaire</p>
+<p class="admonition-title">Un premier système planétaire</p>
 <p>Créez une scène affichant deux sphères. La première représentera la Terre et la
 seconde la Lune. Les deux sphères doivent tourner sur elles-mêmes et la Lune
 doit également tourner autour de la Terre. De plus, la rotation de la Lune sur elle-même
 est telle que l’on voit toujours la même face depuis la Terre.</p>
 <p>Pensez à utiliser des objets de type <a class="reference external" href="https://threejs.org/docs/index.html#api/en/objects/Group">Group</a> pour contrôler plus facilement
 les différentes rotations.</p>
-<div class="last admonition tip">
-<p class="first admonition-title">Astuce</p>
-<p class="last">Pour info, le rayon de la Terre est approximativement de 6 378 km et le rayon
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Pour info, le rayon de la Terre est approximativement de 6 378 km et le rayon
 de la Lune est approximativement de 1 737 km. Cela signifie que la Lune
 à un rayon 0.2723 plus petite que celui de la Terre.</p>
 </div>
@@ -868,7 +870,7 @@ de la Lune est approximativement de 1 737 km. Cela signifie que la Lune
         <a href="materiaux.html" class="btn btn-neutral float-right" title="Les matériaux" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="introduction.html" class="btn btn-neutral" title="Introduction et mise en place" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction et mise en place" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -877,11 +879,12 @@ de la Lune est approximativement de 1 737 km. Cela signifie que la Lune
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@epsi.fr - CC-BY-SA
+        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/epsi-i5-3d/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-i2-3d/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -895,27 +898,16 @@ de la Lune est approximativement de 1 737 km. Cela signifie que la Lune
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
