@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -11,33 +10,37 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Objets et scène &mdash; Documentation Visualisation 3D </title>
-  
 
-  
-  
-  
-  
+  <title>Objets et scène &mdash; Visualisation 3D</title>
 
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-    
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les matériaux" href="materiaux.html" />
@@ -55,7 +58,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Visualisation 3D
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Visualisation 3D
           
 
           
@@ -75,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -147,6 +151,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -181,13 +186,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Objets et scène</li>
     
@@ -206,7 +209,7 @@
         <a href="materiaux.html" class="btn btn-neutral float-right" title="Les matériaux" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="introduction.html" class="btn btn-neutral" title="Introduction et mise en place" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction et mise en place" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -248,15 +251,15 @@ Une géométrie 3D est définit ensuite par ses faces, chacune d’elle étant c
 en définissant des <em>vertices</em> et leur association pour créer des faces.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">();</span>
 <span class="nx">geometry</span><span class="p">.</span><span class="nx">vertices</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
-          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
-          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
-          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
-          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">3</span><span class="p">),</span>
+          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span> <span class="mf">1</span><span class="p">,</span>  <span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">3</span><span class="p">),</span>
+          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span>  <span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">3</span><span class="p">),</span>
+          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span> <span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">3</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="nx">geometry</span><span class="p">.</span><span class="nx">faces</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
-          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Face3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Face3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Face3</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">),</span>
+          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Face3</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">1</span><span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
 </div>
@@ -286,26 +289,26 @@ Comme ce dernier hérite de <a class="reference external" href="https://threejs.
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 
       <span class="c1">// création de la caméra</span>
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1000</span><span class="p">);</span>
 
       <span class="c1">// création de la scène</span>
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
       <span class="c1">// couleur de fond noire</span>
-      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
 
       <span class="c1">// création d&#39;une géométrie</span>
       <span class="kd">var</span> <span class="nx">geometry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">();</span>
       <span class="nx">geometry</span><span class="p">.</span><span class="nx">vertices</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
-                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
-                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
-                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span>
-                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">3</span><span class="p">),</span>
+                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span>  <span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">3</span><span class="p">),</span>
+                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span>  <span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">3</span><span class="p">),</span>
+                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">3</span><span class="p">)</span>
       <span class="p">);</span>
 
       <span class="nx">geometry</span><span class="p">.</span><span class="nx">faces</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
-                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Face3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Face3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Face3</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">),</span>
+                <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Face3</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">1</span><span class="p">)</span>
       <span class="p">);</span>
 
       <span class="c1">// création du mesh et ajout dans la scène</span>
@@ -318,7 +321,7 @@ Comme ce dernier hérite de <a class="reference external" href="https://threejs.
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/1bcb7e6c7cad20f800cc2cad6d2e87f0/scene002.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/3ab71cf9bbd4a824328e81c7c6dc951e/scene002.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <p>Créer manuellement les informations pour une <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Geometry">Geometry</a> est assez compliqué. Heureusement,
 <a class="reference external" href="https://threejs.org/">three.js</a> fournit un ensemble de classes qui héritent toutes de <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Geometry">Geometry</a> et qui s’occupent
 de créer les <em>vertices</em> et les faces pour des figures élémentaires tels que
@@ -384,27 +387,27 @@ le <a class="reference external" href="https://threejs.org/docs/index.html#api/e
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 
       <span class="c1">// création de la caméra</span>
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1000</span><span class="p">);</span>
 
       <span class="c1">// création de la scène</span>
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
       <span class="c1">// couleur de fond noire</span>
-      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
 
       <span class="c1">// création du mesh et ajout dans la scène</span>
-      <span class="kd">var</span> <span class="nx">mesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">TorusGeometry</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
+      <span class="kd">var</span> <span class="nx">mesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">TorusGeometry</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">16</span><span class="p">,</span> <span class="mf">50</span><span class="p">));</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">mesh</span><span class="p">);</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">camera</span><span class="p">);</span>
 
       <span class="c1">// positionnement du mesh</span>
-      <span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span>
+      <span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3</span><span class="p">;</span>
       <span class="nx">mesh</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">.5</span><span class="p">;</span>
       <span class="nx">mesh</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">;</span>
 
       <span class="c1">// positionnement de la caméra</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mf">5</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mf">4</span><span class="p">;</span>
       <span class="nx">camera</span><span class="p">.</span><span class="nx">lookAt</span><span class="p">(</span><span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>
 
       <span class="c1">// rendu</span>
@@ -414,7 +417,7 @@ le <a class="reference external" href="https://threejs.org/docs/index.html#api/e
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/8698eddf94efc53ddafa8a4b9d174b56/scene003.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/2a145b281b454729c1cf1c063976688e/scene003.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <p>Il existe également des méthodes utilitaires dans la classe <a class="reference external" href="https://threejs.org/docs/index.html#api/en/core/Object3D">Object3D</a> permettant de réaliser
 des transformations de coordonnées :</p>
 <ul class="simple">
@@ -427,7 +430,7 @@ des transformations de coordonnées :</p>
 d’appel de ces méthodes) est important. Les opérations seront réalisées dans
 <strong>l’ordre inverse</strong>. Ainsi si vous appelez :</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">obj</span><span class="p">.</span><span class="nx">rotateY</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span>
-<span class="nx">obj</span><span class="p">.</span><span class="nx">translateX</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">translateX</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Pour un objet situé initialement à l’origine de la scène (0, 0, 0).
@@ -535,30 +538,30 @@ doit être rafraîchie (généralement la méthode est appelée au bout de 1/60 
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 
       <span class="c1">// création de la caméra</span>
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1000</span><span class="p">);</span>
 
       <span class="c1">// création de la scène</span>
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
       <span class="c1">// couleur de fond noire</span>
-      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
 
       <span class="c1">// création du mesh et ajout dans la scène</span>
-      <span class="kd">var</span> <span class="nx">torus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">TorusGeometry</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
+      <span class="kd">var</span> <span class="nx">torus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">TorusGeometry</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">16</span><span class="p">,</span> <span class="mf">50</span><span class="p">));</span>
       <span class="kd">var</span> <span class="nx">sphere</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">SphereGeometry</span><span class="p">());</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">torus</span><span class="p">);</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">sphere</span><span class="p">);</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">camera</span><span class="p">);</span>
 
       <span class="c1">// positionnement de la caméra</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mf">15</span><span class="p">;</span>
 
       <span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">torus</span><span class="p">.</span><span class="nx">rotateY</span><span class="p">(</span><span class="mf">.1</span><span class="p">);</span>
 
-        <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
         <span class="nx">sphere</span><span class="p">.</span><span class="nx">rotateZ</span><span class="p">(</span><span class="mf">.1</span><span class="p">);</span>
-        <span class="nx">sphere</span><span class="p">.</span><span class="nx">translateX</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+        <span class="nx">sphere</span><span class="p">.</span><span class="nx">translateX</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span>
 
         <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
         <span class="nx">renderer</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">);</span>
@@ -570,7 +573,7 @@ doit être rafraîchie (généralement la méthode est appelée au bout de 1/60 
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/a213ab2ba9aeef7b6d5a49796dee3277/scene004.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/42eae7f49ff30c763d782e278fa81794/scene004.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <p>La fonction <code class="docutils literal notranslate"><span class="pre">animate()</span></code> est appelée à la ligne 51. Elle se passe
 elle-même en paramètre de <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame</a> (ligne 47) avant d’appeler le <em>renderer</em>
 pour faire un rendu de l’image.</p>
@@ -662,26 +665,26 @@ ainsi une chaîne de transformation.</p>
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 
       <span class="c1">// création de la caméra</span>
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1000</span><span class="p">);</span>
 
       <span class="c1">// création de la scène</span>
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
       <span class="c1">// couleur de fond noire</span>
-      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
 
       <span class="c1">// création du mesh et ajout dans la scène</span>
       <span class="kd">var</span> <span class="nx">sphere</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">SphereGeometry</span><span class="p">());</span>
-      <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+      <span class="nx">sphere</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mf">2</span><span class="p">;</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">sphere</span><span class="p">);</span>
 
       <span class="c1">// création du mesh et ajout comme fils du premier mesh</span>
       <span class="kd">var</span> <span class="nx">cubeFils</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">BoxGeometry</span><span class="p">());</span>
       <span class="nx">sphere</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cubeFils</span><span class="p">);</span>
-      <span class="nx">cubeFils</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+      <span class="nx">cubeFils</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>
 
       <span class="c1">// positionnement de la caméra</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
 
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">);</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -689,7 +692,7 @@ ainsi une chaîne de transformation.</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/c6c33f9a2a00cc052c6f1087b00fda29/scene005.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/2e8ee43edcaf8292b799f094090eaf68/scene005.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <p>Dans l’exemple ci-dessus on crée une sphère (par défaut au centre de la scène) et
 on positionne cette sphère à (2,0,0) à la ligne 32. Puis, on crée un cube
 (<a class="reference external" href="https://threejs.org/docs/index.html#api/en/geometries/BoxGeometry">BoxGeometry</a>) que l’on ajoute comme fils à la sphère et on positionne ce cube à
@@ -782,13 +785,13 @@ dans la hiérarchie d’objets et de contrôler plus facilement les transformati
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 
       <span class="c1">// création de la caméra</span>
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1000</span><span class="p">);</span>
 
       <span class="c1">// création de la scène</span>
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
       <span class="c1">// couleur de fond noire</span>
-      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
 
       <span class="c1">// création du groupe</span>
       <span class="kd">var</span> <span class="nx">group</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Group</span><span class="p">();</span>
@@ -796,16 +799,16 @@ dans la hiérarchie d’objets et de contrôler plus facilement les transformati
 
       <span class="c1">// création du premier cube et ajout dans le groupe</span>
       <span class="kd">var</span> <span class="nx">cube1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">BoxGeometry</span><span class="p">());</span>
-      <span class="nx">cube1</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+      <span class="nx">cube1</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mf">2</span><span class="p">;</span>
       <span class="nx">group</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cube1</span><span class="p">);</span>
 
       <span class="c1">// création du second cube et ajout dans le groupe</span>
       <span class="kd">var</span> <span class="nx">cube2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">BoxGeometry</span><span class="p">());</span>
-      <span class="nx">cube2</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span>
+      <span class="nx">cube2</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2</span><span class="p">;</span>
       <span class="nx">group</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">cube2</span><span class="p">);</span>
 
       <span class="c1">// positionnement de la caméra</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
 
       <span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">cube1</span><span class="p">.</span><span class="nx">rotateX</span><span class="p">(</span><span class="mf">.1</span><span class="p">);</span>
@@ -822,7 +825,7 @@ dans la hiérarchie d’objets et de contrôler plus facilement les transformati
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/0c66adb0a4bf2e03c93994969cbc93ac/scene006.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/f9dc9612496ce58393dcf7da720aa274/scene006.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <p>Dans l’exemple ci-dessus, chaque cube tourne autour de son axe X dans son repère
 de coordonnées local et le groupe auquel ils appartiennent tourne autour de son
 axe Z</p>
@@ -835,7 +838,7 @@ la longueur des axes à afficher.</p>
 <span class="nx">cube1</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">AxesHelper</span><span class="p">(</span><span class="mf">1.3</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/b1e76746f569b1432ee08376202cd656/scene006b.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">la</span> <span class="pre">même</span> <span class="pre">scène</span> <span class="pre">avec</span> <span class="pre">l'affichage</span> <span class="pre">des</span> <span class="pre">axes</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/adb02b578415d0f66944c0ab77b6f65a/scene006b.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">la</span> <span class="pre">même</span> <span class="pre">scène</span> <span class="pre">avec</span> <span class="pre">l'affichage</span> <span class="pre">des</span> <span class="pre">axes</span></code></a>.</p>
 </div>
 </div>
 <div class="section" id="excercice">
@@ -879,12 +882,21 @@ de la Lune est approximativement de 1 737 km. Cela signifie que la Lune
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-i2-3d/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-i2-3d/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -896,7 +908,6 @@ de la Lune est approximativement de 1 737 km. Cela signifie que la Lune
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

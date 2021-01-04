@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -11,33 +10,37 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les matériaux &mdash; Documentation Visualisation 3D </title>
-  
 
-  
-  
-  
-  
+  <title>Les matériaux &mdash; Visualisation 3D</title>
 
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-    
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les interactions" href="interactions.html" />
@@ -55,7 +58,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Visualisation 3D
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Visualisation 3D
           
 
           
@@ -75,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -147,6 +151,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -181,13 +186,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Les matériaux</li>
     
@@ -206,7 +209,7 @@
         <a href="interactions.html" class="btn btn-neutral float-right" title="Les interactions" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="objets_et_scene.html" class="btn btn-neutral" title="Objets et scène" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="objets_et_scene.html" class="btn btn-neutral float-left" title="Objets et scène" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -225,8 +228,8 @@ un programme exécuté par la carte graphique pour créer le rendu.</p>
 <div class="section" id="le-meshbasicmaterial">
 <h2>Le MeshBasicMaterial<a class="headerlink" href="#le-meshbasicmaterial" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Si vous ne précisez aucun matériau lors de la création d’une instance de <a class="reference external" href="https://threejs.org/docs/index.html#api/en/objects/Mesh">Mesh</a>,
-alors <a class="reference external" href="https://threejs.org/">three.js</a> utilise par défaut un nouveau <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial">MeshBasicMaterial</a> en utilisant
-une couleur au hasard.</p>
+alors <a class="reference external" href="https://threejs.org/">three.js</a> utilise par défaut un nouveau <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial">MeshBasicMaterial</a> avec la couleur
+blanche.</p>
 <p>Le <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial">MeshBasicMaterial</a>, comme son nom l’indique, est très simple. Il remplit la
 géométrie à partir d’une couleur ou d’une texture sans tenir compte de l’ombrage
 (<em>shading</em>). Ce matériau fonctionne donc sans avoir besoin d’ajouter des lumières
@@ -301,13 +304,13 @@ dans la scène.</p>
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 
       <span class="c1">// création de la caméra</span>
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1000</span><span class="p">);</span>
 
       <span class="c1">// création de la scène</span>
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
       <span class="c1">// couleur de fond noire</span>
-      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
 
       <span class="c1">// création d&#39;un objet à partir d&#39;une géométrie</span>
       <span class="c1">// et d&#39;un matériau de couleur rouge</span>
@@ -318,7 +321,7 @@ dans la scène.</p>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span>
 
       <span class="c1">// positionnement de la caméra</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
 
       <span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">object</span><span class="p">.</span><span class="nx">rotateY</span><span class="p">(</span><span class="mf">.05</span><span class="p">);</span>
@@ -332,7 +335,7 @@ dans la scène.</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/bc9de8578fa716bf5093b75dea0d30ae/scene007.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/c2189453361743e382eb1770c0250a04/scene007.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <p>À la ligne 34, on passe en paramètre de la construction du <a class="reference external" href="https://threejs.org/docs/index.html#api/en/objects/Mesh">Mesh</a> un nouveau
 <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial">MeshBasicMaterial</a> pour lequel on précise une couleur rouge <code class="docutils literal notranslate"><span class="pre">0xFF0000</span></code>.</p>
 <div class="admonition note">
@@ -433,13 +436,13 @@ facile de créer un rendu qui peut être contrôlé au moyen du clavier :</p>
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 
       <span class="c1">// création de la caméra</span>
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1000</span><span class="p">);</span>
 
       <span class="c1">// création de la scène</span>
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
       <span class="c1">// couleur de fond noire</span>
-      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
 
       <span class="c1">// création d&#39;un objet à partir d&#39;une géométrie</span>
       <span class="c1">// et d&#39;un matériau de couleur rouge</span>
@@ -453,7 +456,7 @@ facile de créer un rendu qui peut être contrôlé au moyen du clavier :</p>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span>
 
       <span class="c1">// positionnement de la caméra</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
 
       <span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">object</span><span class="p">.</span><span class="nx">rotateY</span><span class="p">(</span><span class="mf">.05</span><span class="p">);</span>
@@ -472,7 +475,7 @@ facile de créer un rendu qui peut être contrôlé au moyen du clavier :</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/7ca440b53e19c3bcfa72a8db4c823cf2/scene008.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/1e1566c3e715c81397e619a1ad6b4653/scene008.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <p>À la ligne 40, on position la valeur de la propriété <a class="reference external" href="https://threejs.org/docs/index.html#api/en/materials/MeshBasicMaterial.wireframe">wireframe</a> à <code class="docutils literal notranslate"><span class="pre">true</span></code>.
 Des lignes 58 à 60, on enregistre un <em>listener</em> pour inverser l’état de cette
 propriété lorsqu’on presse un touche du clavier.</p>
@@ -641,17 +644,17 @@ ainsi que trois lumières.</p>
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 
       <span class="c1">// création de la caméra</span>
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1000</span><span class="p">);</span>
 
       <span class="c1">// création de la scène</span>
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
       <span class="c1">// couleur de fond noire</span>
-      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
 
       <span class="c1">// création d&#39;un objet</span>
       <span class="kd">var</span> <span class="nx">object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span>
-          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">TorusKnotGeometry</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span>
+          <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">TorusKnotGeometry</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">128</span><span class="p">,</span> <span class="mf">16</span><span class="p">),</span>
           <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshPhongMaterial</span><span class="p">({</span><span class="nx">color</span><span class="o">:</span> <span class="mh">0xf7e951</span><span class="p">})</span>
       <span class="p">);</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span>
@@ -662,16 +665,16 @@ ainsi que trois lumières.</p>
 
       <span class="c1">// Directional light</span>
       <span class="kd">var</span> <span class="nx">directionalLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">DirectionalLight</span><span class="p">(</span><span class="mh">0xffdddd</span><span class="p">,</span> <span class="mf">.8</span><span class="p">);</span>
-      <span class="nx">directionalLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+      <span class="nx">directionalLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">);</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">directionalLight</span><span class="p">);</span>
 
       <span class="c1">// Point light</span>
       <span class="kd">var</span> <span class="nx">pointLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">DirectionalLight</span><span class="p">(</span><span class="mh">0xaaaaff</span><span class="p">,</span> <span class="mf">.3</span><span class="p">);</span>
-      <span class="nx">pointLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+      <span class="nx">pointLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="o">-</span><span class="mf">2</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">);</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">pointLight</span><span class="p">);</span>
 
       <span class="c1">// positionnement de la caméra</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
 
       <span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">object</span><span class="p">.</span><span class="nx">rotateY</span><span class="p">(</span><span class="mf">.05</span><span class="p">);</span>
@@ -685,7 +688,7 @@ ainsi que trois lumières.</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/bddff869177dba0f7b2ddd7c6ae41bd4/scene009.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/5a00671079617328b4d5c9e22d3eb294/scene009.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Vous trouverez à <a class="reference external" href="https://spoonless.github.io/tuto_threejs/lights.html">cette adresse</a>
@@ -839,18 +842,18 @@ Il faut utiliser l’attribut <code class="docutils literal notranslate"><span c
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
       <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">domElement</span><span class="p">);</span>
 
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">10</span><span class="p">);</span>
 
       <span class="kd">var</span> <span class="nx">textureLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">TextureLoader</span><span class="p">();</span>
 
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
-      <span class="kd">var</span> <span class="nx">geo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PlaneGeometry</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">geo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PlaneGeometry</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
       <span class="kd">var</span> <span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshBasicMaterial</span><span class="p">();</span>
       <span class="kd">var</span> <span class="nx">plane</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="nx">geo</span><span class="p">,</span> <span class="nx">material</span><span class="p">);</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">plane</span><span class="p">);</span>
 
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mf">4</span><span class="p">;</span>
 
       <span class="nx">textureLoader</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;maps/webgl.logo.png&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">texture</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">plane</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">map</span> <span class="o">=</span> <span class="nx">texture</span><span class="p">;</span>
@@ -1064,17 +1067,17 @@ qui sont capables de produire des ombres (<a class="reference external" href="ht
       <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 
       <span class="c1">// création de la caméra</span>
-      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mf">45</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1000</span><span class="p">);</span>
 
       <span class="c1">// création de la scène</span>
       <span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
       <span class="c1">// couleur de fond noire</span>
-      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="nx">scene</span><span class="p">.</span><span class="nx">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Color</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
 
       <span class="c1">// création d&#39;une géométrie</span>
       <span class="kd">var</span> <span class="nx">knot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span>
-        <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">TorusKnotGeometry</span><span class="p">(</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span>
+        <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">TorusKnotGeometry</span><span class="p">(</span><span class="mf">.5</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">128</span><span class="p">,</span> <span class="mf">16</span><span class="p">),</span>
         <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshPhongMaterial</span><span class="p">({</span><span class="nx">color</span><span class="o">:</span> <span class="mh">0xf7e951</span><span class="p">})</span>
       <span class="p">);</span>
       <span class="nx">knot</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mf">1.1</span><span class="p">;</span>
@@ -1085,18 +1088,18 @@ qui sont capables de produire des ombres (<a class="reference external" href="ht
         <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PlaneGeometry</span><span class="p">(),</span>
         <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshLambertMaterial</span><span class="p">()</span>
       <span class="p">);</span>
-      <span class="nx">ground</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-      <span class="nx">ground</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">setScalar</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+      <span class="nx">ground</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mf">2</span><span class="p">;</span>
+      <span class="nx">ground</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">setScalar</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">ground</span><span class="p">);</span>
 
       <span class="c1">// création d&#39;une lumière directionnelle</span>
       <span class="kd">var</span> <span class="nb">sun</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">DirectionalLight</span><span class="p">();</span>
-      <span class="nb">sun</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="nb">sun</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
       <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nb">sun</span><span class="p">);</span>
 
       <span class="c1">// positionnement de la caméra</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mf">4</span><span class="p">;</span>
+      <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mf">7</span><span class="p">;</span>
       <span class="nx">camera</span><span class="p">.</span><span class="nx">lookAt</span><span class="p">(</span><span class="nx">ground</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>
 
       <span class="c1">// activation des ombres</span>
@@ -1118,7 +1121,7 @@ qui sont capables de produire des ombres (<a class="reference external" href="ht
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/58df5a771cd186d224752f5df091c146/scene016.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/8bd087aadddb45bbc28b7191ad2f7f67/scene016.html"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">ce</span> <span class="pre">fichier</span> <span class="pre">directement</span></code></a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Astuce</p>
 <p>Pour les objets non animés, on peut pré-calculer la projection des ombres et
@@ -1148,12 +1151,21 @@ stocker cette information dans une texture que l’on utilise ensuite comme
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-i2-3d/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-i2-3d/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -1165,7 +1177,6 @@ stocker cette information dans une texture que l’on utilise ensuite comme
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
